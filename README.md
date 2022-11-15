@@ -29,4 +29,7 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 streamlit run bot.py
 ```
 
-目前暂无在线版本（等我解决Chrome的事情再说orz）...
+## FAQ:
+
+- 目前暂无在线版本（等我解决Chrome的事情再说orz）...
+- 由于期末评估尚未开放，所以本项目是用日常反馈进行测试的。待期末评估开放后，作者会commit最新代码。
