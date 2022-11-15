@@ -7,6 +7,8 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 
 **强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！捍卫我们的消极自由！**
 
+[Online Demo](https://pku-course-evaluation-bot.streamlit.app)（本网页不会保存和泄漏您的学号和密码，请放心食用！）
+
 使用方法：
 1. 克隆此仓库并进入目录
    ```bash
