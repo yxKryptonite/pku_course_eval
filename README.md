@@ -17,7 +17,7 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
    pip install -r requirements.txt
    ```
 
-3. 修改配置文件 `config.yaml` 中的 `username` 和 `password` 为你的学号和密码，修改 `eval_words` 为你想要评价的话（超过10个字）。
+3. 修改配置文件 `config.yaml` 中的 `username` 和 `password` 为你的学号和密码，修改 `eval_words` 为你想要评价的话（超过10个字），修改 `browser` 为你所使用的浏览器（首字母大写，目前支持Chrome, Firefox, Edge 和 Safari）。
 
 4. 运行 `main.py`，程序会自动提交评教
    ```bash

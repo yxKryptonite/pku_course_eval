@@ -3,9 +3,19 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-def login(eval_data, eval_url="http://kcpg.pku.edu.cn"):
+def login(eval_data, eval_url="http://kcpg.pku.edu.cn", browser="Chrome"):
     '''登录'''
-    driver = webdriver.Chrome()
+    if browser == "Chrome":
+        driver = webdriver.Chrome()
+    elif browser == "Firefox":
+        driver = webdriver.Firefox()
+    elif browser == "Edge":
+        driver = webdriver.Edge()
+    elif browser == "Safari":
+        driver = webdriver.Safari()
+    else:
+        raise ValueError("Invalid browser name")
+
     driver.get(eval_url)
     time.sleep(3)
     # 登录，send_keys设置input框内容，click处理点击
