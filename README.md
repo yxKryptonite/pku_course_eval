@@ -1,7 +1,7 @@
 # pku_course_eval
 An automated program to submit course evaluation.
 
-copyright (c) 2022
+copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 
 **强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！**
 
