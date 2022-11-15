@@ -1,6 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver import FirefoxOptions
 
 
 def login(eval_data, eval_url="http://kcpg.pku.edu.cn", browser="Chrome"):
@@ -8,7 +9,9 @@ def login(eval_data, eval_url="http://kcpg.pku.edu.cn", browser="Chrome"):
     if browser == "Chrome":
         driver = webdriver.Chrome()
     elif browser == "Firefox":
-        driver = webdriver.Firefox()
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        driver = webdriver.Firefox(options=opts)
     elif browser == "Edge":
         driver = webdriver.Edge()
     elif browser == "Safari":
@@ -62,4 +65,4 @@ def final_evaluation(driver, link, eval_data):
     time.sleep(1)
     # TODO
     # print(1)
-    pass
+    raise NotImplementedError("期末评估尚未实现，敬请期待！")
