@@ -20,7 +20,7 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 
 你也可以使用网页端进行互动式使用（无需修改 `config.yaml` ，但需要安装依赖库）：
 ```bash
-streamlit run app.py
+streamlit run bot.py
 ```
 
 网页在线版本正在开发中...
