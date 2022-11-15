@@ -3,12 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-def login(eval_data, eval_url="http://kcpg.pku.edu.cn", need_chrome=False):
+def login(eval_data, eval_url="http://kcpg.pku.edu.cn"):
     '''登录'''
-    if need_chrome:
-        driver = webdriver.Chrome("chromedriver")
-    else:
-        driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
     driver.get(eval_url)
     time.sleep(3)
     # 登录，send_keys设置input框内容，click处理点击

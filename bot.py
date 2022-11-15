@@ -1,8 +1,5 @@
 from utils import login, get_link_list, daily_feedback, final_evaluation
 import streamlit as st
-# add chromedriver to PATH
-import os
-os.environ['PATH'] += ":/app/pku_course_eval"
 
 
 if __name__ == "__main__":
@@ -14,7 +11,7 @@ if __name__ == "__main__":
     choice = st.radio("请选择评估类型", ("日常反馈", "期末评估"), index=1)
 
     if st.button("开始评估"):
-        driver = login(eval_data, need_chrome=True)
+        driver = login(eval_data)
         link_list = get_link_list(driver)
         for link in link_list:
             if choice == "日常反馈":
