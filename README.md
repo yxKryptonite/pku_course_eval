@@ -12,7 +12,7 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
    cd pku_course_eval
    ```
 
-2. 安装 python3 以及 `main.py` 中的依赖库
+2. 安装 python3 及本项目依赖库
    ```bash
    pip install -r requirements.txt
    ```
