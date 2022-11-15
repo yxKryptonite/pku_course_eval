@@ -1,5 +1,8 @@
 from utils import login, get_link_list, daily_feedback, final_evaluation
 import streamlit as st
+# add chromedriver to PATH
+import os
+os.environ['PATH'] += ":/app/pku_course_eval"
 
 
 if __name__ == "__main__":
