@@ -17,3 +17,10 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
    ```bash
     python main.py
     ```
+
+你也可以使用网页端进行互动式使用（无需修改 `config.yaml` ，但需要安装依赖库）：
+```bash
+streamlit run app.py
+```
+
+网页在线版本正在开发中...
