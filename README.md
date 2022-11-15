@@ -3,7 +3,9 @@ An automated program to submit course evaluation.
 
 copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 
-**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！**
+“自由人，就是不受阻碍地做他想做的事情的人。” ——霍布斯《利维坦》
+
+**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！捍卫我们的消极自由！**
 
 使用方法：
 1. 克隆此仓库并进入目录
