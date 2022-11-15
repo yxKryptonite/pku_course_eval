@@ -11,7 +11,7 @@ if __name__ == "__main__":
     choice = st.radio("请选择评估类型", ("日常反馈", "期末评估"), index=1)
 
     if st.button("开始评估"):
-        driver = login(eval_data)
+        driver = login(eval_data, need_chrome=True)
         link_list = get_link_list(driver)
         for link in link_list:
             if choice == "日常反馈":
