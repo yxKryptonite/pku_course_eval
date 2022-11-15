@@ -3,7 +3,7 @@ import yaml
 
 
 if __name__ == "__main__":
-    with open('config.yaml') as f:
+    with open('config.yaml', 'r', encoding="UTF-8") as f:
         eval_data = yaml.load(f, Loader=yaml.FullLoader)
 
     driver = login(eval_data)
