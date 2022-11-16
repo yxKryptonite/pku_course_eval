@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import FirefoxOptions
-LONG_INTERVAL  = 5
+LONG_INTERVAL  = 10
 MID_INTERVAL   = 3
 SHORT_INTERVAL = 1
 

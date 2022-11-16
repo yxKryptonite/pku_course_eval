@@ -33,14 +33,18 @@ if __name__ == "__main__":
     choice = st.radio("请选择评估类型", ("日常反馈", "期末评估"), index=1)
 
     if st.button("开始评估"):
-        driver = login(eval_data, browser=eval_data['browser'])
-        link_list = get_link_list(driver)
-        for link in link_list:
-            if choice == "日常反馈":
-                daily_feedback(driver, link, eval_data)
-            elif choice == "期末评估":
-                final_evaluation(driver, link, eval_data)
+        with st.spinner("正在登录..."):
+            driver = login(eval_data, browser=eval_data['browser'])
+
+        with st.spinner("正在获取链接..."):
+            link_list = get_link_list(driver)
+
+        with st.spinner("正在评估..."):
+            for link in link_list:
+                if choice == "日常反馈":
+                    daily_feedback(driver, link, eval_data)
+                elif choice == "期末评估":
+                    final_evaluation(driver, link, eval_data)
 
         driver.close()
         st.success("自动评教已完成！")
-        st.balloons()
