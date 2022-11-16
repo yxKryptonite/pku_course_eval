@@ -32,12 +32,14 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
     python main.py
     ```
 
-你也可以在本地使用浏览器进行互动式使用（无需修改 `config.yaml` ，但需要安装依赖库）：
+你也可以在本地使用浏览器进行图形化操作（无需修改 `config.yaml` ，但需要安装依赖库）：
 ```bash
 streamlit run bot.py
 ```
+或使用上述的 [Online Demo](https://pku-course-evaluation-bot.streamlit.app) 进行操作。
 
 ## FAQ:
 
-- 目前暂无在线版本（等我解决Chrome的事情再说orz）...
-- 由于期末评估尚未开放，所以本项目是用日常反馈进行测试的。待期末评估开放后，作者会commit最新代码。
+- 在线版本已发布，但该服务器较为脆弱，可能无法承受大量流量，所以还是推荐本地使用（本地也可以使用图形化界面）。
+- 由于期末评估尚未开放，所以本项目是用日常反馈进行测试的。待期末评估开放后，作者会 commit 最新代码。
+- 如果 [Online Demo](https://pku-course-evaluation-bot.streamlit.app) 挂了，请立刻在 [issue](https://github.com/yxKryptonite/pku_course_eval/issues) 中提出，作者会 reboot 服务器。
