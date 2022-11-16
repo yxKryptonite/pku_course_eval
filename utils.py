@@ -6,6 +6,8 @@ LONG_INTERVAL  = 10
 MID_INTERVAL   = 3
 SHORT_INTERVAL = 1
 
+GREAT_INTERVAL = 121 # > 2min
+
 
 def login(eval_data, eval_url="http://kcpg.pku.edu.cn", browser="Chrome"):
     '''登录'''
@@ -66,7 +68,7 @@ def final_evaluation(driver, link, eval_data):
     - 所有评分指标选项不完全一致
     """
     driver.get(link)
-    time.sleep(MID_INTERVAL)
+    time.sleep(GREAT_INTERVAL)
     # TODO
     # print(1)
     raise NotImplementedError("期末评估尚未实现，敬请期待！")

@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon="assets/icon.png",
     layout="centered",
     menu_items={
-        'About': "**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！捍卫我们的消极自由！**",
+        'About': "**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！捍卫我们的「消极自由」！**",
         'Report a bug': "https://github.com/yxKryptonite/pku_course_eval/issues",
         'Get Help': "https://github.com/yxKryptonite/pku_course_eval#readme"
     }
