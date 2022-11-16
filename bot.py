@@ -1,9 +1,22 @@
+'''PKU课程评估Bot——本地版'''
 from utils import login, get_link_list, daily_feedback, final_evaluation
 import streamlit as st
 
 
+st.set_page_config(
+    page_title="PKU课程评估Bot",
+    page_icon="assets/icon.png",
+    layout="centered",
+    menu_items={
+        'About': "**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237&page=5)！捍卫我们的消极自由！**",
+        'Report a bug': "https://github.com/yxKryptonite/pku_course_eval/issues",
+        'Get Help': "https://github.com/yxKryptonite/pku_course_eval#readme"
+    }
+)
+
+
 if __name__ == "__main__":
-    st.title("PKU课程评估Bot")
+    st.title("PKU课程评估Bot——本地版")
     eval_data = {}
     eval_data['username']   = st.text_input("请输入学号")
     eval_data['password']   = st.text_input("请输入密码", type="password")
