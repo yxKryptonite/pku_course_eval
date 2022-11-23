@@ -37,13 +37,15 @@ if __name__ == "__main__":
             driver = login(eval_data, browser=eval_data['browser'])
 
         with st.spinner("正在获取链接..."):
-            link_list = get_link_list(driver)
+            fb, ev = get_link_list(driver)
 
         with st.spinner("正在评估..."):
-            for link in link_list:
-                if choice == "日常反馈":
+            if choice == "日常反馈":
+                for link in fb:
                     daily_feedback(driver, link, eval_data)
-                elif choice == "期末评估":
+                    
+            elif choice == "期末评估":
+                for link in ev:
                     final_evaluation(driver, link, eval_data)
 
         driver.close()

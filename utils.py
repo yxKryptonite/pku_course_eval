@@ -2,10 +2,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import FirefoxOptions
-LONG_INTERVAL  = 10
+import random
+
+LONG_INTERVAL  = 5
 MID_INTERVAL   = 3
 SHORT_INTERVAL = 1
-
 GREAT_INTERVAL = 121 # > 2min
 
 
@@ -36,18 +37,23 @@ def login(eval_data, eval_url="http://kcpg.pku.edu.cn", browser="Chrome"):
 
 def get_link_list(driver):
     '''
-    获取课程评估链接列表
+    返回值：两个列表
 
-    目前获得的链接都是日常反馈链接，后续会添加期末评估链接
+    `feedback_link_list`：日常反馈链接列表
+    `evaluation_link_list`：课程评估链接列表
     '''
     time.sleep(SHORT_INTERVAL)
     container = driver.find_element(By.ID, "myTaskContainer")
-    link_list = []
+    feedback_link_list = []
+    evaluation_link_list = []
     feedbacks = container.find_elements(By.CLASS_NAME, "feedback")
+    evaluations = container.find_elements(By.CLASS_NAME, "pingjia")
     for feedback in feedbacks:
-        link_list.append(feedback.get_attribute("href"))
+        feedback_link_list.append(feedback.get_attribute("href"))
+    for evaluation in evaluations:
+        evaluation_link_list.append(evaluation.get_attribute("href"))
 
-    return link_list
+    return feedback_link_list, evaluation_link_list
 
 
 def daily_feedback(driver, link, eval_data):
@@ -68,7 +74,45 @@ def final_evaluation(driver, link, eval_data):
     - 所有评分指标选项不完全一致
     """
     driver.get(link)
+    time.sleep(MID_INTERVAL)
+
+    # ----------------- 内嵌函数 ----------------- #
+
+    def page_wise(page):
+        tab = page.find_element(By.CLASS_NAME, "tab-pane.active")
+        try:
+            radios = tab.find_elements(By.CLASS_NAME, "question.SelectQ.clearfix.marginbt.radioFive")
+            textareas = tab.find_elements(By.TAG_NAME, "textarea")
+        except:
+            raise ValueError("Invalid page")
+
+        for question in radios:
+            choices = question.find_elements(By.CLASS_NAME, "radioFivelabel.backpo")
+            rdn = random.randint(0, 4)
+            choice = choices[rdn]
+            choice.click()
+            page.execute_script("arguments[0].scrollIntoView();", choice)
+
+        for textarea in textareas:
+            textarea.send_keys(eval_data['eval_words'])
+
+    # ----------------- 内嵌函数 ----------------- #
+        
+    tabs = driver.find_element(By.CLASS_NAME, "tabOutside2.tabOutsideNew.tabOutside2New")
+    ul = tabs.find_element(By.TAG_NAME, "ul")
+    items = ul.find_elements(By.TAG_NAME, "li")
+
+    for item in items:
+        item.click()
+        time.sleep(SHORT_INTERVAL)
+        driver.execute_script("window.scrollTo(0, 0)")
+        page_wise(driver)
+
     time.sleep(GREAT_INTERVAL)
-    # TODO
-    # print(1)
-    raise NotImplementedError("期末评估尚未实现，敬请期待！")
+
+    # submit
+    submit_btn = driver.find_element(By.ID, "btnSave")
+    submit_btn.click()
+    time.sleep(SHORT_INTERVAL)
+    confirm_btn = driver.find_element(By.ID, "btn.btn-primary")
+    confirm_btn.click()
