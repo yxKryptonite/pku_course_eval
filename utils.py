@@ -46,8 +46,12 @@ def get_link_list(driver):
     container = driver.find_element(By.ID, "myTaskContainer")
     feedback_link_list = []
     evaluation_link_list = []
-    feedbacks = container.find_elements(By.CLASS_NAME, "feedback")
-    evaluations = container.find_elements(By.CLASS_NAME, "pingjia")
+    try:
+        feedbacks = container.find_elements(By.CLASS_NAME, "feedback")
+        evaluations = container.find_elements(By.CLASS_NAME, "pingjia")
+    except:
+        raise ValueError("No such link")
+
     for feedback in feedbacks:
         feedback_link_list.append(feedback.get_attribute("href"))
     for evaluation in evaluations:
