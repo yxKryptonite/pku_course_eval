@@ -4,9 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import FirefoxOptions
 import random
 
-LONG_INTERVAL  = 5
-MID_INTERVAL   = 3
 SHORT_INTERVAL = 1
+MID_INTERVAL   = 3
+LONG_INTERVAL  = 5
 GREAT_INTERVAL = 121 # > 2min
 
 
@@ -85,13 +85,16 @@ def final_evaluation(driver, link, eval_data):
     def page_wise(page):
         tab = page.find_element(By.CLASS_NAME, "tab-pane.active")
         try:
-            radios = tab.find_elements(By.CLASS_NAME, "question.SelectQ.clearfix.marginbt.radioFive")
+            selectives = tab.find_elements(By.CLASS_NAME, "question.SelectQ.clearfix.marginbt.radioFive")
             textareas = tab.find_elements(By.TAG_NAME, "textarea")
         except:
             raise ValueError("Invalid page")
 
-        for question in radios:
+        for question in selectives:
             choices = question.find_elements(By.CLASS_NAME, "radioFivelabel.backpo")
+            if len(choices) == 0:
+                choices = question.find_elements(By.CLASS_NAME, "checkboxFivelabel.cbxbackpo")
+
             rdn = random.randint(0, 4)
             choice = choices[rdn]
             choice.click()
@@ -116,7 +119,10 @@ def final_evaluation(driver, link, eval_data):
 
     # submit
     submit_btn = driver.find_element(By.ID, "btnSave")
+    driver.execute_script("arguments[0].scrollIntoView();", submit_btn)
     submit_btn.click()
     time.sleep(SHORT_INTERVAL)
-    confirm_btn = driver.find_element(By.ID, "btn.btn-primary")
+    confirm_btn = driver.find_element(By.CLASS_NAME, "btn.btn-primary")
+    driver.execute_script("arguments[0].scrollIntoView();", confirm_btn)
     confirm_btn.click()
+    time.sleep(MID_INTERVAL)

@@ -6,7 +6,7 @@ copyright (c) 2022 [@yxKryptonite](https://github.com/yxKryptonite)
 > 消极自由，即是免于他人干涉的自由。
 > <p align="right">——伊努曼尔·康德</p>
 
-**强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237)！捍卫我们的「消极自由」！**
+<!-- **强烈要求教务部取消[评教新规](https://bbs.pku.edu.cn/v2/post-read.php?bid=438&threadid=18427237)！捍卫我们的「消极自由」！** -->
 
 ## Online Demo
 
@@ -44,5 +44,5 @@ streamlit run bot.py
 ## Notes:
 
 - 在线版本已发布，但该服务器较为脆弱，可能无法承受大量流量，所以还是推荐本地使用（本地也可以使用图形化界面）。
-- 期末评估代码已经发布，但仍可能存在潜在 bug ，目前请谨慎使用。
+- 期末评估代码已经发布，如遇 bug ，请在 [issue](https://github.com/yxKryptonite/pku_course_eval/issues) 中提出。
 - 如果 [Online Demo](https://github.com/yxKryptonite/pku_course_eval#online-demo) 挂了，请立刻在 [issue](https://github.com/yxKryptonite/pku_course_eval/issues) 中提出，作者会 reboot 服务器。
