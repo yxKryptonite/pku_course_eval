@@ -1,8 +1,6 @@
 <div align=center><img src="assets/icon.png" height=150></div>
 <h1 align=center>北大课程评估自动化</h1>
 
-<div align=center>copyright (c) 2022 <a href="https://github.com/yxKryptonite">@yxKryptonite</a></div>
-
 > 消极自由，即是免于他人干涉的自由。
 > <p align="right">——伊努曼尔·康德</p>
 
@@ -46,3 +44,9 @@ streamlit run bot.py
 - 在线版本已发布，但该服务器较为脆弱，可能无法承受大量流量，所以还是推荐本地使用（本地也可以使用图形化界面）。
 - 期末评估代码已经发布，如遇 bug ，请在 [issue](https://github.com/yxKryptonite/pku_course_eval/issues) 中提出。
 - 如果 [Online Demo](https://github.com/yxKryptonite/pku_course_eval#online-demo) 挂了，请立刻在 [issue](https://github.com/yxKryptonite/pku_course_eval/issues) 中提出，作者会 reboot 服务器。 -->
+
+## License
+
+[GPL-3.0](LICENSE)
+
+copyright (c) 2022 <a href="https://github.com/yxKryptonite">@yxKryptonite</a>
